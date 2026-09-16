@@ -36,6 +36,7 @@ export type Project = {
   imageUrl: string;
   github?: string;
   live?: string;
+  status?: string;
 };
 
 export type Skill = { group: string; items: string[] };

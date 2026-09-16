@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const { data: projects } = useProjects();
-  const featured = projects.slice(0, 3);
+  const featured = projects;
 
   return (
     <>
@@ -62,24 +62,7 @@ function Home() {
                 microservices, REST APIs, and clean, maintainable systems. Previously freelanced for Uber and trained at mthree (Wiley Edge).
               </p>
             </Reveal>
-            <Reveal delay={0.15}>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link
-                  to="/projects"
-                  className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
-                >
-                  See my work
-                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-                <a
-                  href="/resume.pdf"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-5 py-3 text-sm font-medium backdrop-blur transition-colors hover:bg-muted"
-                >
-                  <Download size={16} />
-                  Download CV
-                </a>
-              </div>
-            </Reveal>
+            
             <Reveal delay={0.2}>
               <div className="mt-10 flex items-center gap-2 text-xs text-muted-foreground">
                 <MapPin size={14} />
@@ -88,7 +71,7 @@ function Home() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="relative mx-auto w-full max-w-sm">
+          <Reveal delay={0.1} className="relative mx-auto w-full max-w-sm flex flex-col items-center">
             <motion.div
               className="relative overflow-hidden rounded-3xl border border-border shadow-[0_30px_80px_-30px_rgba(0,0,0,0.25)]"
               style={{
@@ -111,7 +94,27 @@ function Home() {
                 <p className="text-xs text-muted-foreground">Software Engineer · StyloPay</p>
               </div>
             </motion.div>
+
+            <Reveal delay={0.15}>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  to="/experience"
+                  className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                >
+                  See my work
+                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <a
+                  href="/resume.pdf"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-5 py-3 text-sm font-medium backdrop-blur transition-colors hover:bg-muted"
+                >
+                  <Download size={16} />
+                  Download CV
+                </a>
+              </div>
+            </Reveal>
           </Reveal>
+          
         </div>
       </section>
 
@@ -163,8 +166,8 @@ function Home() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p, i) => (
-            <Reveal key={p.id} delay={i * 0.06}>
+          {featured.filter((p) => !p.status).slice(0, 3).map((p, i) => (
+            <Reveal key={p.id} delay={i * 0.1}>
               <article className="surface-card surface-card-hover group h-full overflow-hidden">
                 <div className="aspect-[16/10] overflow-hidden bg-muted">
                   <img

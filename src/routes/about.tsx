@@ -3,6 +3,7 @@ import { PageHeader, Reveal } from "@/components/Reveal";
 import { useEducation, useInterests, useProfile } from "@/lib/use-portfolio-data";
 import profileImg from "@/assets/profile.png";
 import { Code2, Brain, Trophy, Layers } from "lucide-react";
+import { motion } from "motion/react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -28,17 +29,29 @@ function AboutPage() {
       <PageHeader eyebrow="About" title="A bit about me." subtitle={profile.tagline} />
 
       <section className="container-page grid gap-12 pb-16 md:grid-cols-[1fr_1.4fr]">
-        <Reveal>
-          <div
-            className="overflow-hidden rounded-3xl border border-border"
+        <Reveal delay={0.1} className="relative mx-auto w-full max-w-sm">
+          <motion.div
+            className="relative overflow-hidden rounded-3xl border border-border shadow-[0_30px_80px_-30px_rgba(0,0,0,0.25)]"
             style={{
               backgroundImage:
                 "radial-gradient(120% 90% at 50% 15%, hsl(var(--accent)/0.10), transparent 55%), linear-gradient(180deg, var(--color-surface-elevated), var(--color-muted))",
             }}
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            <img src={profileImg} alt={profile.name} width={768} height={960} loading="lazy" className="aspect-[4/5] w-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)]" />
-          </div>
+            <img
+              src={profileImg}
+              alt="Sandeep Sharma"
+              width={768}
+              height={960}
+              className="aspect-[4/5] w-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)]"
+            />
 
+            <div className="absolute bottom-3 left-3 right-3 rounded-2xl bg-background/85 px-4 py-3 backdrop-blur-md">
+              <p className="font-display text-sm font-semibold">Sandeep Sharma</p>
+              <p className="text-xs text-muted-foreground">Software Engineer · StyloPay</p>
+            </div>
+          </motion.div>
         </Reveal>
         <Reveal delay={0.05}>
           <p className="text-lg leading-relaxed text-foreground/90">{profile.bio}</p>

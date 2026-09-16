@@ -20,7 +20,7 @@ function ExperiencePage() {
     // "Present" always comes first
     if (a.end === "Present") return -1;
     if (b.end === "Present") return 1;
-    return parseInt(b.end) - parseInt(a.end);
+    return new Date(b.end).getTime() - new Date(a.end).getTime();
   });
   return (
     <>
