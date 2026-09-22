@@ -1,4 +1,5 @@
 import profileImg from "@/assets/profile.png";
+import projectCaas from "@/assets/project-caas.png";
 import projectStylopay from "@/assets/project-stylopay.jpg";
 import projectFoodorder from "@/assets/project-foodorder.jpg";
 import projectTaskbook from "@/assets/project-taskbook.jpg";
@@ -117,7 +118,7 @@ export const projects: Project[] = [
     description:
       "Backend REST APIs for a card issuing platform, focused on cardholder onboarding and wallet/prefund management. Onboarding APIs register new cardholders and hand off into the KYC-verified flow before a wallet and card are provisioned. Wallet and prefund APIs handle balance management and funding operations. Backend is structured as independent microservices (Onboarding, Wallet, Prefund) with clear API contracts between them. Integrated the transaction webhook system and built the notification templates used to send external systems updates on wallet events. Implemented structured logging across services with Grafana dashboards for monitoring and troubleshooting.",
     tech: ["Java 17", "Spring Boot", "MySQL", "REST API", "API Gateway", "Jenkins", "Grafana", "Microservices"],
-    imageUrl: "", // no image yet — you didn't have one for this project
+    imageUrl: projectCaas,
     order: 1,
   },
   {
