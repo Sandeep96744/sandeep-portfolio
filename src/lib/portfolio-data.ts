@@ -37,6 +37,7 @@ export type Project = {
   github?: string;
   live?: string;
   status?: string;
+  order?: number;
 };
 
 export type Skill = { group: string; items: string[] };
@@ -110,6 +111,26 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: "caas",
+    name: "Card-as-a-Service (CaaS) Platform",
+    summary: "Backend microservices powering cardholder onboarding and wallet/prefund management for a card issuing platform.",
+    description:
+      "Backend REST APIs for a card issuing platform, focused on cardholder onboarding and wallet/prefund management. Onboarding APIs register new cardholders and hand off into the KYC-verified flow before a wallet and card are provisioned. Wallet and prefund APIs handle balance management and funding operations. Backend is structured as independent microservices (Onboarding, Wallet, Prefund) with clear API contracts between them. Integrated the transaction webhook system and built the notification templates used to send external systems updates on wallet events. Implemented structured logging across services with Grafana dashboards for monitoring and troubleshooting.",
+    tech: ["Java 17", "Spring Boot", "MySQL", "REST API", "API Gateway", "Jenkins", "Grafana", "Microservices"],
+    imageUrl: "", // no image yet — you didn't have one for this project
+    order: 1,
+  },
+  {
+    id: "stylopay-docs",
+    name: "StyloPay API Documentation Portal",
+    summary: "Internal API documentation portal for HashDT, ZOQQ, and HashTag.",
+    description:
+      "Built at StyloPay covering the complete API collection across three products — HashDT, ZOQQ, and HashTag. Features a live API testing playground where engineers can fire requests directly from the docs, with collection import for quick onboarding. Documentation is split across Docusaurus and Mintlify, with different products hosted on each platform. Replaces scattered internal docs with a single, interactive source of truth for issuer and internal engineering teams.",
+    tech: ["Docusaurus", "Mintlify", "React", "Node.js", "Spring Boot", "REST API", "Postman"],
+    imageUrl: projectStylopay,
+    order: 2,
+  },
+  {
     id: "online-food",
     name: "Online Food Ordering System",
     summary: "Full-stack web app for browsing menus, placing orders, and managing restaurants.",
@@ -118,6 +139,7 @@ export const projects: Project[] = [
     tech: ["Spring Boot", "Java", "MySQL", "REST API", "HTML/CSS/JS"],
     imageUrl: projectFoodorder,
     github: "https://github.com/",
+    order: 3,
   },
   {
     id: "taskbook",
@@ -128,15 +150,7 @@ export const projects: Project[] = [
     tech: ["JavaScript", "Firebase", "HTML", "CSS"],
     imageUrl: projectTaskbook,
     github: "https://github.com/",
-  },
-  {
-    id: "stylopay-docs",
-    name: "StyloPay API Documentation Portal",
-    summary: "React + Node docs layer wrapping Spring Boot fintech APIs.",
-    description:
-      "Built from scratch at StyloPay — a React.js documentation site with a Node.js wrapper over Spring Boot APIs, giving issuer teams a clean reference for wallet and prefund endpoints.",
-    tech: ["React", "Node.js", "Spring Boot", "REST"],
-    imageUrl: projectStylopay,
+    order: 4,
   },
   {
     id: "tictactoe",
@@ -146,6 +160,7 @@ export const projects: Project[] = [
     tech: ["HTML", "CSS", "JavaScript"],
     imageUrl: projectTictactoe,
     github: "https://github.com/",
+    order: 5,
   },
 ];
 

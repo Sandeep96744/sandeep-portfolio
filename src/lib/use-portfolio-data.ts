@@ -67,7 +67,7 @@ export const useExperiences = () =>
 export const useProjects = () =>
   useQuery<Project[]>({
     queryKey: ["projects"],
-    queryFn: () => fetchOrFallback("projects", seedProjects),
+    queryFn: () => fetchOrFallback("projects", seedProjects, "order"),
     initialData: seedProjects,
   });
 
