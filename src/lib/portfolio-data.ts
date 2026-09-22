@@ -1,6 +1,6 @@
 import profileImg from "@/assets/profile.png";
 import projectCaas from "@/assets/project-caas.png";
-import projectStylopay from "@/assets/project-stylopay.jpg";
+import projectStylopay from "@/assets/project-stylopay.png";
 import projectFoodorder from "@/assets/project-foodorder.jpg";
 import projectTaskbook from "@/assets/project-taskbook.jpg";
 import projectTictactoe from "@/assets/project-tictactoe.jpg";
