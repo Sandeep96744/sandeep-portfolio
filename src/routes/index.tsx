@@ -105,7 +105,7 @@ function Home() {
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <a
-                  href="/resume.pdf"
+                  href="/sandeep_resume.pdf"
                   className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-5 py-3 text-sm font-medium backdrop-blur transition-colors hover:bg-muted"
                 >
                   <Download size={16} />
