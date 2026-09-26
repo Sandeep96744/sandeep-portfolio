@@ -61,7 +61,7 @@ export const profile: Profile = {
   email: "sandeepsharma96744@gmail.com",
   phone: "+91 96744 17830",
   photoUrl: profileImg,
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/sandeep_resume.pdf",
   socials: [
     { label: "GitHub", url: "https://github.com/", icon: "github" },
     { label: "LinkedIn", url: "https://linkedin.com/", icon: "linkedin" },
